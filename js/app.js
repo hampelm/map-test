@@ -18,10 +18,12 @@ $(function(){
   map.on('locationfound', onLocationFound);
   map.on('locationerror', function(error) {
     console.log("Error finding location", error);
-    alert("Location error: " + error);
+    alert(error.message);
   });
 
-  map.locate({setView: true, maxZoom: 18});
-
-
+  map.locate({
+    setView: true,
+    maxZoom: 18,
+    enableHighAccuracy: true
+  });
 });
